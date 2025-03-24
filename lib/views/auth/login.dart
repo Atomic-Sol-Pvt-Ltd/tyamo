@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
 import 'package:tyamo/views/widgets/auth/auth_heading.dart';
+import 'package:tyamo/views/widgets/auth/auth_text_field.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
-  final RoundedLoadingButtonController _btnController =
+  final RoundedLoadingButtonController _loginbtnController =
       RoundedLoadingButtonController();
 
   @override
@@ -38,58 +39,22 @@ class Login extends StatelessWidget {
 
             //? -- Email TextField
             SizedBox(height: 50),
-            TextField(
-              textAlign: TextAlign.start,
-              textInputAction: TextInputAction.none,
-              obscureText: false,
-              autofocus: false,
-              style: GoogleFonts.poppins(fontSize: 14, color: Colors.black),
+            AuthTextField(
               keyboardType: TextInputType.emailAddress,
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                fillColor: Color(0xffE7E7F2),
-                filled: true,
-                prefixIcon: Icon(Icons.alternate_email, size: 15),
-                prefixIconColor: Color(0xff00205C),
-                label: Text("Email"),
-                labelStyle: GoogleFonts.poppins(
-                  fontSize: 14,
-                  color: Colors.black,
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              lableText: "Email",
+              obscureText: false,
+              icon: Icons.alternate_email,
+              size: 15,
             ),
 
             //? -- Password TextField
             SizedBox(height: 20),
-            TextField(
-              textAlign: TextAlign.start,
-              textInputAction: TextInputAction.none,
-              obscureText: true,
-              autofocus: false,
-              style: GoogleFonts.poppins(fontSize: 14, color: Colors.black),
+            AuthTextField(
               keyboardType: TextInputType.text,
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                fillColor: Color(0xffE7E7F2),
-                filled: true,
-                prefixIcon: Icon(Icons.password, size: 15),
-                prefixIconColor: Color(0xff00205C),
-                label: Text("Password"),
-                labelStyle: GoogleFonts.poppins(
-                  fontSize: 14,
-                  color: Colors.black,
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              lableText: "Password",
+              obscureText: true,
+              icon: Icons.password,
+              size: 15,
             ),
 
             //? -- Login Button
@@ -97,7 +62,7 @@ class Login extends StatelessWidget {
             RoundedLoadingButton(
               width: 2000,
               borderRadius: 10,
-              controller: _btnController,
+              controller: _loginbtnController,
               color: Color(0xff00c1AA),
               onPressed: () {},
               child: Text(

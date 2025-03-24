@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tyamo/views/auth/login.dart';
+import 'package:tyamo/views/auth/forgot_password.dart';
+// import 'package:tyamo/views/auth/register.dart';
 
 void main() {
   runApp(const Tyamo());
@@ -18,7 +19,7 @@ class Tyamo extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Login(),
+      home: ForgotPassword(),
     );
   }
 }
