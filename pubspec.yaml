@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
   rounded_loading_button_plus: ^3.0.1
+  circular_profile_avatar: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
     - assets/images/logo.png
     - assets/images/symbol.png
     - assets/images/forgotpassword.png
+    - assets/images/profile_setup_bg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
