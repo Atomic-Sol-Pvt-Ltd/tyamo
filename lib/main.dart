@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tyamo/views/invitation/accept_invite.dart';
+// import 'package:tyamo/views/invitation/invite_friends.dart';
 // import 'package:tyamo/views/auth/forgot_password.dart';
-import 'package:tyamo/views/profile/profile_setup.dart';
+// import 'package:tyamo/views/profile/profile_setup.dart';
 // import 'package:tyamo/views/auth/register.dart';
 
 void main() {
@@ -20,7 +22,7 @@ class Tyamo extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ProfileSetup(),
+      home: AcceptInvite(),
     );
   }
 }

@@ -66,6 +66,8 @@ flutter:
     - assets/images/symbol.png
     - assets/images/forgotpassword.png
     - assets/images/profile_setup_bg.jpg
+    - assets/images/empty.png
+    - assets/images/invite.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
