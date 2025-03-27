@@ -1,4 +1,7 @@
+import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/components/button/gf_button.dart';
+import 'package:getwidget/shape/gf_button_shape.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AcceptInvite extends StatelessWidget {
@@ -52,6 +55,94 @@ class AcceptInvite extends StatelessWidget {
                 fontSize: 15,
               ),
               textScaler: TextScaler.linear(1),
+            ),
+          ),
+
+          //? -- Accept & Decline Request Card
+          SizedBox(height: 40),
+          SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              //* -- Card
+              child: Card(
+                color: Colors.white,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: SizedBox(
+                  height: 100,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          //* -- Circular avatar
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(10, 20, 5, 15),
+                            child: SizedBox(
+                              height: 60,
+                              width: 60,
+                              child: CircularProfileAvatar(
+                                "",
+                                backgroundColor: Colors.blue,
+                                radius: 35,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //* -- Text @username
+                              Padding(
+                                padding: EdgeInsets.only(top: 5, bottom: 5),
+                                child: Text(
+                                  "@hamzeedv",
+                                  style: GoogleFonts.poppins(fontSize: 17),
+                                ),
+                              ),
+                              //* -- Text name
+                              Padding(
+                                padding: EdgeInsets.only(left: 0.0),
+                                child: Text(
+                                  "Hamza",
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          Spacer(),
+
+                          //* Row for Buttons
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                GFButton(
+                                  color: Color(0xff00D7CC),
+                                  shape: GFButtonShape.pills,
+                                  child: Text("Accept"),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(width: 4),
+                                GFButton(
+                                  color: Color.fromARGB(255, 215, 0, 18),
+                                  shape: GFButtonShape.pills,
+                                  child: Text("Decline"),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
 

@@ -71,19 +71,22 @@ class Register extends StatelessWidget {
 
             //? -- register Button
             SizedBox(height: 30),
-            RoundedLoadingButton(
-              width: 2000,
-              borderRadius: 10,
-              controller: _registerbtnController,
-              color: Color(0xff00c1AA),
-              onPressed: () {},
-              child: Text(
-                "Register",
-                style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1,
+            Hero(
+              tag: "Auth",
+              child: RoundedLoadingButton(
+                width: 2000,
+                borderRadius: 10,
+                controller: _registerbtnController,
+                color: Color(0xff00c1AA),
+                onPressed: () {},
+                child: Text(
+                  "Register",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
             ),

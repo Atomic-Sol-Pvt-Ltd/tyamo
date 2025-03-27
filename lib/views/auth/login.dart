@@ -65,30 +65,33 @@ class Login extends StatelessWidget {
 
             //? -- Login Button
             SizedBox(height: 30),
-            RoundedLoadingButton(
-              width: 2000,
-              borderRadius: 10,
-              controller: _loginbtnController,
-              color: Color(0xff00c1AA),
-              onPressed: () {
-                Timer(Duration(seconds: 3), () {
-                  _loginbtnController.success();
-                  Navigator.pushReplacement(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.fade,
-                      child: ProfileSetup(),
-                    ),
-                  );
-                });
-              },
-              child: Text(
-                "Login",
-                style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1,
+            Hero(
+              tag: "Auth",
+              child: RoundedLoadingButton(
+                width: 2000,
+                borderRadius: 10,
+                controller: _loginbtnController,
+                color: Color(0xff00c1AA),
+                onPressed: () {
+                  Timer(Duration(seconds: 3), () {
+                    _loginbtnController.success();
+                    Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: ProfileSetup(),
+                      ),
+                    );
+                  });
+                },
+                child: Text(
+                  "Login",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
             ),

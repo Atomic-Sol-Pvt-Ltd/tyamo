@@ -164,31 +164,34 @@ class _ProfileSetupState extends State<ProfileSetup> {
             SizedBox(height: 40),
             SizedBox(
               width: 250,
-              child: RoundedLoadingButton(
-                width: 2000,
-                borderRadius: 10,
-                controller: _profileSetupBtnController,
-                color: Color(0xff00c1AA),
-                onPressed: () {
-                  Timer(Duration(seconds: 3), () {
-                  _profileSetupBtnController.success();
-                  Navigator.pushReplacement(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.fade,
-                      child: InviteFriends(),
-                    ),
+              child: Hero(
+                tag: "Auth",
+                child: RoundedLoadingButton(
+                  width: 2000,
+                  borderRadius: 10,
+                  controller: _profileSetupBtnController,
+                  color: Color(0xff00c1AA),
+                  onPressed: () {
+                    Timer(Duration(seconds: 3), () {
+                    _profileSetupBtnController.success();
+                    Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: InviteFriends(),
+                      ),
+                    );
+                  },
                   );
-                },
-                );
-                },
-                child: Text(
-                  "Next",
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1,
+                  },
+                  child: Text(
+                    "Next",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1,
+                    ),
                   ),
                 ),
               ),
