@@ -26,7 +26,12 @@ class AcceptInvite extends StatelessWidget {
           ),
 
           //* -- back arrow
-          leading: Icon(Icons.arrow_back, color: Colors.black),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back, color: Colors.black),
+          ),
         ),
       ),
 

@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/button/gf_button.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:tyamo/views/invitation/accept_invite.dart';
 
 class InviteFriends extends StatelessWidget {
   const InviteFriends({super.key});
@@ -31,9 +33,23 @@ class InviteFriends extends StatelessWidget {
 
           //* -- icon
           actions: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Icon(Icons.person_outline, color: Colors.purple, size: 35),
+            GestureDetector(
+              onTap: () {
+                Timer(Duration(seconds: 0), () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: AcceptInvite(),
+                    ),
+                  );
+                },
+                );
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Icon(Icons.person_outline, color: Colors.purple, size: 35),
+              ),
             ),
           ],
         ),

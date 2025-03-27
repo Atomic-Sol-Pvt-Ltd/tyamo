@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
+import 'package:tyamo/views/auth/login.dart';
 import '../widgets/auth/auth_heading.dart';
 import '../widgets/auth/auth_text_field.dart';
 
 class Register extends StatelessWidget {
-   Register({super.key});
-    final RoundedLoadingButtonController _registerbtnController =
+  Register({super.key});
+  final RoundedLoadingButtonController _registerbtnController =
       RoundedLoadingButtonController();
 
   @override
@@ -31,7 +33,7 @@ class Register extends StatelessWidget {
             //! -- Heading
             AuthHeading(
               mainText: "Sign up to Tyamo",
-              subText: "To connect with \nyour partner",
+              subText: "Get connect with \nyour partner",
               logo: "assets/images/symbol.png",
               logoSize: 30,
               fontSize: 18,
@@ -114,12 +116,23 @@ class Register extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text(
-                  "Sign In",
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: Color(0xff2F76EA),
-                    fontWeight: FontWeight.w700,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: Login(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: Color(0xff2F76EA),
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],

@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
+import 'package:tyamo/views/invitation/invite_friends.dart';
 import 'package:tyamo/views/widgets/auth/auth_text_field.dart';
 
 class ProfileSetup extends StatefulWidget {
@@ -165,7 +169,19 @@ class _ProfileSetupState extends State<ProfileSetup> {
                 borderRadius: 10,
                 controller: _profileSetupBtnController,
                 color: Color(0xff00c1AA),
-                onPressed: () {},
+                onPressed: () {
+                  Timer(Duration(seconds: 3), () {
+                  _profileSetupBtnController.success();
+                  Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: InviteFriends(),
+                    ),
+                  );
+                },
+                );
+                },
                 child: Text(
                   "Next",
                   style: GoogleFonts.poppins(

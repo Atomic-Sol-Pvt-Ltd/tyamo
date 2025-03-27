@@ -1,6 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
+import 'package:tyamo/views/auth/forgot_password.dart';
+import 'package:tyamo/views/auth/register.dart';
+import 'package:tyamo/views/profile/profile_setup.dart';
 import 'package:tyamo/views/widgets/auth/auth_heading.dart';
 import 'package:tyamo/views/widgets/auth/auth_text_field.dart';
 
@@ -64,7 +70,18 @@ class Login extends StatelessWidget {
               borderRadius: 10,
               controller: _loginbtnController,
               color: Color(0xff00c1AA),
-              onPressed: () {},
+              onPressed: () {
+                Timer(Duration(seconds: 3), () {
+                  _loginbtnController.success();
+                  Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: ProfileSetup(),
+                    ),
+                  );
+                });
+              },
               child: Text(
                 "Login",
                 style: GoogleFonts.poppins(
@@ -78,15 +95,26 @@ class Login extends StatelessWidget {
 
             //? -- Forgot Password?
             SizedBox(height: 20),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Forgot Password?",
-                style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  color: Color(0xffC12720),
-                  fontWeight: FontWeight.normal,
-                  letterSpacing: 1,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: ForgotPassword(),
+                  ),
+                );
+              },
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Forgot Password?",
+                  style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    color: Color(0xffC12720),
+                    fontWeight: FontWeight.normal,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
             ),
@@ -104,12 +132,23 @@ class Login extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text(
-                  "Sign Up",
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: Color(0xff2F76EA),
-                    fontWeight: FontWeight.w700,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: Register(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Sign Up",
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: Color(0xff2F76EA),
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],
