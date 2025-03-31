@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:tyamo/views/auth/login.dart';
+// import 'package:tyamo/views/auth/login.dart';
+import 'package:tyamo/views/homepage/homepage.dart';
 
 void main() {
   runApp(const Tyamo());
@@ -21,7 +22,7 @@ class Tyamo extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: Login(),
+          home: Homepage(),
         );
       },
     );

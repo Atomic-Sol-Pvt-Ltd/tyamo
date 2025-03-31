@@ -40,6 +40,8 @@ dependencies:
   getwidget: ^6.0.0
   page_transition: ^2.2.1
   responsive_sizer: ^3.3.1
+  animated_bottom_navigation_bar: ^1.4.0
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,7 @@ flutter:
     - assets/images/profile_setup_bg.jpg
     - assets/images/empty.png
     - assets/images/invite.png
+    - assets/dashboard/message.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
